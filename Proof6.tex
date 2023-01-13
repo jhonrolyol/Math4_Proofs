@@ -1,0 +1,74 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  %%%%%%%%%%%%%%%%%%%%%%%% Proof 6 %%%%%%%%%%%%%%%%%%%%%
+  \pagecolor{pagecolor}
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \newpage
+  \begin{center}
+        \textbf{PROBLEMA 6}
+    \end{center}
+    Un alumno estima por error el modelo  
+    \begin{equation*}
+        Y_{i} = \beta_{1} +\beta_{2}X_{2i}+\mu_{1i}
+    \end{equation*}
+    Siendo el modelo correcto
+    \begin{equation*}
+        Y_{i} = \alpha_{1}+\alpha_{2}X_{2i}+\alpha_{3} X_{3i}+\mu_{2i}
+    \end{equation*}
+    ¿La estimación de la varianza residual o muestral del primer modelo será menor que la del modelo correcto ? ¿Por que ? Demuestre su respuesta.
+    \begin{center}
+        \textbf{Solución}
+    \end{center}
+
+\end{document}
+\pagecolor{pagecolor}

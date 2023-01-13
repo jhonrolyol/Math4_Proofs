@@ -1,0 +1,74 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  %%%%%%%%%%%%%%%%%%%%%%%% Proof 5 %%%%%%%%%%%%%%%%%%%%%
+  \pagecolor{pagecolor}
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \newpage
+    \begin{center}
+        \textbf{PROBLEMA 5}
+    \end{center}
+    Se a estimado el siguiente modelo con 100 observaciones 
+    \begin{equation*}
+        Y_{t} = 2 +7D_{1t}+4.37X_{t}+e_{t}
+    \end{equation*}
+    \begin{equation*}
+        (0.5)\, \, (0.5) \, \, (1.21)
+    \end{equation*}
+    Donde los valores entre paréntesis son los errores estandar de las estimaciones de los parámetros y $D_{1t}=1$ para las observaciones 1 $\leq$t $\leq$50 y $D_{1t}=0$ para las observaciones 51 $\leq$ t$\leq$ 100.
+    Contraste la hipótesis de que los términos constantes para ambas submuestras ($t_{1}$=1,2,3,$\dots$,50 y $t_{2}$=51,52,53,$\dots$,100) son iguales.
+    \begin{center}
+        \textbf{Solución}
+    \end{center}
+
+\end{document}
+\pagecolor{pagecolor}

@@ -1,0 +1,115 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  %%%%%%%%%%%%%%%%%%%%%%%% Proof 4 %%%%%%%%%%%%%%%%%%%%%
+  \pagecolor{pagecolor}
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \newpage
+  \begin{center}
+        \textbf{PROBLEMA 4}
+    \end{center}
+    Se ha estimado el modelo 
+    \begin{equation*}
+        Y_{t} = 4+3.8D_{1t}+12D_{2t}-4D_{3t}+0.5X_{t}+e_{t}
+    \end{equation*}
+    Para el período comprendido entre el primer trimestre de 1980 y el cuarto trimestre de 2001, donde las variables $D_{it}$, i=1,2,3 son variables ficticias para recoger el comportamiento estacional, es decir $D_{it}=1$ para el trimestre  i-ésimo y $D_{it}=0$ para el resto. Determine el término constante para el primer trimestre de 1995.
+    \begin{center}
+        \textbf{Solución}
+    \end{center}
+    
+    \noindent Dada que ya tenemos el modelo estimado 
+
+    \begin{equation*}
+      Y_{t} = 4+3.8D_{1t}+12D_{2t}-4D_{3t}+0.5X_{t}+e_{t}
+    \end{equation*}
+    
+    \begin{equation*}
+      Y_{t} = \hat{Y}_{t} +e_{t}  \, \, \, \, \, \,  \textup{o} \, \, \, \, \, \, \, \,  e_{t} = Y_{t}-\hat{Y}_{t}
+    \end{equation*}
+
+    \noindent Entonces 
+
+    \begin{equation*}
+      \hat{Y}_{t} = 4+3.8D_{1t}+12D_{2t}-4D_{3t}+0.5X_{t}
+    \end{equation*}
+
+    \noindent Como dato tenemos  
+
+    \begin{itemize}
+        \item $D_{1(1995)} = 1$
+        \item $D_{2(1995)} = 0$
+        \item $D_{3(1995)} = 0$
+    \end{itemize}
+
+
+    \noindent Por consiguiente, el modelo estimado para el año de 1995 es :
+
+    \begin{equation*}
+      \hat{Y}_{1995} = 4+3.8D_{1(1995)}+12D_{2(1995)}-4D_{3(1995)}+0.5X_{(1995)}
+    \end{equation*}
+    
+    \noindent Y si evaluamos el modelo para el primer trimestre del año 1995, obtenemos
+
+    \begin{equation*}
+      \hat{Y}_{1995} = 4 + 3.8(1) + 12(0) - 4(0) + 0.5X_{(1995)}
+    \end{equation*}
+
+  
+    \begin{equation*}
+      \hat{Y}_{1995} = 7.8 + 0.5X_{(1995)}
+    \end{equation*}
+
+    \noindent Por lo tanto, el termino constante para el primer trimestre de 1995 es $7.8$.
+    
+
+\end{document}
+\pagecolor{pagecolor}

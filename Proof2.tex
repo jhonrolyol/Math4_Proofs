@@ -1,0 +1,210 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  \pagecolor{pagecolor}
+  %%%%%%%%%%%%%%%%%%% Proof 2 %%%%%%%%%%%%%%%%%%%%%%%
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \begin{center}  
+      \textbf{PROBLEMA 2}
+  \end{center}
+  \begin{center}
+  \vspace{8mm}
+  \justifying
+      Dado cinco observaciones $U_{-2}, U_{-1}, U_{0},     U_{1},  U_{2} $ en puntos de tiempo igualmente espaciados $ t = -2, -1, 0, 1, 2 $  indicar como se ajusta una parábola a las observaciones por mínimos cuadrados ordinarios y \textbf{demostrar}  que el valor dado por la parábola en el tiempo $t = 0$ es :
+  \end{center}   
+  \begin{equation*}
+      \dfrac{1}{35}(-3U_{-2}+12U_{-1}+17U_{0}+U_{1}-3U_{2})
+  \end{equation*}
+  \begin{center}
+      \textbf{Solución}
+  \end{center}
+  Sea el modelo econométrico  de una parábola que se ajusta a las observaciones  . 
+  \begin{equation*}
+      U_{t} =\beta_{1}+\beta_{2}t+\beta_{3}t^{2}+ u_{t} \, \, \, \, \, \, , \, \, \, \, \, \,t = -2, -1, 0, 1, 2
+  \end{equation*}
+  \noindent Modelo estimado 
+  \begin{equation*}
+        \hat{U}_{t} =\hat{\beta}_{1}+\hat{\beta}_{2}t+\hat{\beta}_{3}t^{2} 
+  \end{equation*}
+  Entonces
+  \begin{align*}
+        e_{t} &= U_{t}-\hat{U}_{t} \\
+        e_{t} &= U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2}\\
+          e^{2}_{t} &= ( U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2} )^{2}\\
+            \sum\limits_{t=-2}^{2}e^{2}_{t} &=  \sum\limits_{t=-2}^{2}( U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2} )^{2}
+  \end{align*}
+  Por consiguiente, para ajustar la parábola a las observaciones, empleamos el método de  mínimos cuadrados ordinarios (\textbf{MCO}).
+  \begin{center}
+  \justifying
+  \textbf{Condición necesaría de primer orden :} Establece, que las primeras derivadas parciales con respecto a los estimadores ($\hat{\beta}_{1},\hat{\beta}_{2},\hat{\beta}_{3}$), tienen que igualarse a cero.    
+  \end{center}
+  \begin{equation*}
+      \dfrac{\partial}{\partial{\hat{\beta}_{1}}}\sum\limits_{t=-2}^{2}e^{2}_{t} = 0 \Longleftrightarrow 2\sum\limits_{t=-2}^{2}( U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2}) (-1) = 0
+  \end{equation*}
+  \begin{equation*}
+          \dfrac{\partial}{\partial{\hat{\beta}_{2}}}\sum\limits_{t=-2}^{2}e^{2}_{t} = 0 \Longleftrightarrow 2\sum\limits_{t=-2}^{2}( U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2}) (-t) = 0
+  \end{equation*}
+  \begin{equation*}
+          \dfrac{\partial}{\partial{\hat{\beta}_{3}}}\sum\limits_{t=-2}^{2}e^{2}_{t} =0 \Longleftrightarrow 2\sum\limits_{t=-2}^{2}( U_{t}-\hat{\beta}_{1}-\hat{\beta}_2t-\hat{\beta}_{3}t^{2}) (-t^{2}) = 0 
+  \end{equation*}
+  Desarrollando obtenemos las siguientes ecuaciones normales
+  \begin{align*}
+      \sum\limits_{t=-2}^{2}U_{t}  & = n\hat{\beta}_{1}+ \sum\limits_{t=-2}^{2}t\hat{\beta}_{2}+\sum\limits_{t=-2}^{2}t^{2}\hat{\beta}_{3} \\
+        \sum\limits_{t=-2}^{2}U_{t}t &  =  \sum\limits_{t=-2}^{2}t\hat{\beta}_{1}+\sum\limits_{t=-2}^{2}t^{2}\hat{\beta}_{2}+\sum\limits_{t=-2}^{2}t^{3}\hat{\beta}_{3}\\
+        \sum\limits_{t=-2}^{2}U_{t}t^{2} & =  \sum\limits_{t=-2}^{2}t^{2}\hat{\beta}_{1}+\sum\limits_{t=-2}^{2}t^{3}\hat{\beta}_{2}+\sum\limits_{t=-2}^{2}t^{4}\hat{\beta}_{3}
+  \end{align*}
+  Expresando en forma matricial
+  \begin{equation*}
+  \begin{pmatrix}
+  \sum\limits_{t=-2}^{2}U_{t}  \\
+  \sum\limits_{t=-2}^{2}U_{t}t \\
+  \sum\limits_{t=-2}^{2}U_{t}t^{2} 
+  \end{pmatrix} = 
+  \begin{pmatrix}
+  n & \sum\limits_{t=-2}^{2}t & \sum\limits_{t=-2}^{2}t^{2}  \\
+  \sum\limits_{t=-2}^{2}t & \sum\limits_{t=-2}^{2}t^{2} & \sum\limits_{t=-2}^{2}t^{3} \\
+  \, \, \sum\limits_{t=-2}^{2}t^{2} & \sum\limits_{t=-2}^{2}t^{3} & \sum\limits_{t=-2}^{2}t^{4}
+  \end{pmatrix}
+  \begin{pmatrix}
+  \hat{\beta}_{1} \\
+    \hat{\beta}_{2}\\
+  \hat{\beta}_{3}
+  \end{pmatrix}
+  \end{equation*}
+  Despejando el vector columna de los estimadores  $\hat{\beta}_{1},\hat{\beta}_{2},\hat{\beta}_{3}$
+  \begin{equation*}
+  \begin{pmatrix}
+  \hat{\beta}_{1} \\
+    \hat{\beta}_{2}\\
+  \hat{\beta}_{3}
+  \end{pmatrix}  = \begin{pmatrix}
+  n & \sum\limits_{t=-2}^{2}t & \sum\limits_{t=-2}^{2}t^{2}  \\
+  \sum\limits_{t=-2}^{2}t & \sum\limits_{t=-2}^{2}t^{2} & \sum\limits_{t=-2}^{2}t^{3} \\
+  \, \, \sum\limits_{t=-2}^{2}t^{2} & \sum\limits_{t=-2}^{2}t^{3} & \sum\limits_{t=-2}^{2}t^{4}
+  \end{pmatrix}^{-1} \begin{pmatrix}
+  \sum\limits_{t=-2}^{2}U_{t}  \\
+  \sum\limits_{t=-2}^{2}U_{t}t \\
+  \sum\limits_{t=-2}^{2}U_{t}t^{2} 
+  \end{pmatrix} 
+  \end{equation*}
+  En el siguiente cuadro puede ver los siguientes resultados para puntos igualmente espaciados $ t = -2, -1, 0, 1, 2$
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    \hline t & $U_{t}$ & $U_{t}t$ & $U_{t}t^{2}$ & $t$ & $t^{2}$ & $t^{3}$& $t^{4}$ \\
+    \hline -2 & $U_{-2}$ & $-2U_{-2}$ & $4U_{-2}$&-2 & 4&-8&16   \\
+    \hline -1 & $U_{-1}$ & $-U_{-1}$ & $U_{-1}$&-1&1&-1&1  \\
+    \hline 0 & $U_{0}$ & $0$ & $0$&0&0&0&0  \\
+    \hline 1 & $U_{1}$ & $U_{1}$ & $U_{1}$&1 &1&1&1  \\
+    \hline 2 & $U_{2}$ & $2U_{2}$ & $4U_{2}$&2 &4&8&16  \\ 
+    \hline Suma total & $\sum\limits_{t=-2}^{2}U_{t}$& $\sum\limits_{t=-2}^{2}U_{t}t$ & $\sum\limits_{t=-2}^{2}U_{t}t^{2}$&$\sum\limits_{t=-2}^{2}t$ &$\sum\limits_{t=-2}^{2}t^{2}$&$\sum\limits_{t=-2}^{2}t^{3}$&$\sum\limits_{t=-2}^{2}t^{4}$\\ \hline
+  \end{tabular} 
+  \end{center}
+  por lo tanto del cuadro anterior obtenemos 
+  \begin{align*}
+      \sum\limits_{t=-2}^{2}U_{t} &= U_{-2} +U_{-1}+U_{0}+U_{1}+U_{2} \\
+      \sum\limits_{t=-2}^{2}U_{t}t &= -2U_{-2} -U_{-1}+0+U_{1}+2U_{2} \\
+      \sum\limits_{t=-2}^{2}U_{t}t^{2} &= 4U_{-2} +U_{-1}+0+U_{1}+4U_{2}\\
+      \sum\limits_{t=-2}^{2}t &= -2 -1+0+1+2 = 0\\
+      \sum\limits_{t=-2}^{2}t^{2} &= 4 +1+0+1+4 = 10\\
+      \sum\limits_{t=-2}^{2}t^{3} &= -8 -1+0+1+8 = 0\\
+    \sum\limits_{t=-2}^{2}t^{4}  &= 16 +1+0+1+16 = 34\\
+  \end{align*}
+  Remplazando los valores
+  \begin{equation*}
+  \begin{pmatrix}
+  \hat{\beta}_{1} \\
+    \hat{\beta}_{2}\\
+  \hat{\beta}_{3}
+  \end{pmatrix}  = 
+  \begin{pmatrix}
+  5 & 0 & 10  \\
+  0 & 10 & 0 \\
+  10 & 0 & 34
+  \end{pmatrix}^{-1} 
+  \begin{pmatrix}
+  U_{-2} +U_{-1}+U_{0}+U_{1}+U_{2} \\
+  -2U_{-2} -U_{-1}+0+U_{1}+2U_{2} \\
+  4U_{-2} +U_{-1}+0+U_{1}+4U_{2}
+  \end{pmatrix} 
+  \end{equation*}
+  \begin{equation*}
+  \begin{pmatrix}
+  \hat{\beta}_{1} 
+  \\
+  \\
+    \hat{\beta}_{2}
+    \\
+    \\
+  \hat{\beta}_{3}
+  \end{pmatrix} = 
+  \begin{pmatrix}
+  \dfrac{1}{35}(-3U_{-2}+12U_{-1}+17U_{0}+12U_{1}-3U_{2})
+  \\
+  \\
+  \dfrac{1}{70}(10U_{-2}-5U_{-1}-10U_{0}-5U_{1}+10U_{2})
+  \\
+  \\
+  \dfrac{1}{350}(50U_{-2}-25U_{-1}-5U_{0}-25U_{1}+50U_{2})
+  \end{pmatrix} 
+  \end{equation*}
+  Retomando el modelo estimado
+  \begin{equation*}
+      \hat{U}_{t} = \hat{\beta}_{1}+\hat{\beta}_{2}t+\hat{\beta}_{3}t^{2}
+  \end{equation*}
+  El valor dado por la parábola en el tiempo t=0 es: 
+  \begin{align*}
+      \hat{U}_{0} &= \hat{\beta}_{1} \\
+        \hat{U}_{0} &= \dfrac{1}{35}(-3U_{-2}+12U_{-1}+17U_{0}+12U_{1}-3U_{2}) \, \, \, \, \, \,  \,  \, \,  \,  \, \,  \,  \, \, \blacksquare 
+  \end{align*} 
+
+\end{document}
+\pagecolor{pagecolor}

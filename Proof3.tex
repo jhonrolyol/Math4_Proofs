@@ -1,0 +1,193 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  \pagecolor{pagecolor}
+  %%%%%%%%%%%%%%%%%%%%%%%% Proof 3 %%%%%%%%%%%%%%%%%%%%%
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \begin{center}
+        \textbf{PROBLEMA 3}
+    \end{center}
+    En el modelo
+    \begin{equation*}
+        Y_{i} = \beta_{1}X_{1i}+\beta_{2}X_{2i}+\mu_{i} \, \, , \, \, \, \textup{i} = 1,2,\dots ,n
+    \end{equation*}
+    Sabemos que
+    \begin{equation*}
+        X^{t}X = \begin{pmatrix}
+    10 & 0 \\
+      0 & 20 
+    \end{pmatrix}
+    \end{equation*}
+    \begin{equation*}
+        X^{t}Y = \begin{pmatrix}
+    3 \\
+      5  
+    \end{pmatrix}
+    \end{equation*}
+    Determine la estimación de los coeficientes del modelo propuesto si $\beta_{1} = \beta_{2}$
+    \begin{center}
+        \textbf{Solución}
+    \end{center}
+
+    \noindent   Dado que tenemos el siguiente modelo de tres variables 
+    \[
+    Y_{i} = \beta_{1}X_{1i}+\beta_{2}X_{2i}+\mu_{i}
+    \]
+    Ahora, aplicando el operador de esperanza matemática se tiene la siguiente función de regresión poblacional
+    \[
+    E(Y_{i}) = \beta_{1}X_{1i}+\beta_{2}X_{2i} \, \, \,\, , \, \, \, E(\mu_{i}) = 0
+    \]
+    Condición de $\beta_{1} = \beta_{2} = \beta^{*}$
+    \[
+    E(Y_{i}) = \beta^{*}\left(X_{1i}+X_{2i}\right)
+    \]
+    Dado que el propósito es estimar los parámetros de la función de regresión poblacional, entonces se considera la siguiente estimación 
+    \[
+    \hat{Y}_{i} = \hat{\beta}_{1}X_{1i}+\hat{\beta}_{2}X_{2i} 
+    \]
+    Condición de $\hat{\beta}_{1} =\hat{\beta}_{2} = \hat{\beta}^{*}$\\\\
+    \[
+    \hat{Y}_{i} =\hat{\beta}^{*} \left(X_{1i}+X_{2i}\right) 
+    \]
+    
+    
+    \noindent Como la variable observada no siempre coincide con la variable estimada existe la posibilidad de que se generen errores muestrales de forma que por definición se tiene:
+    \[
+    e_{i} = Y_{i}-\hat{Y}_{1} = Y_{i}-\hat{\beta}^{*} \left(X_{1i}+X_{2i}\right)  
+    \]
+
+  \noindent entonces, para poder obtener el estimador 
+    \[
+      Min \, \, \,  \sum\limits_{i=1}^{n} e_{i}^{2} = \sum\limits_{i=1}^{n} \left(Y_{i}-\hat{Y}_{i}\right)^{2}  = \sum\limits_{i=1}^{n} \left(Y_{i}- \hat{\beta}^{*} \left(X_{1i}+X_{2i}\right)    \right)^{2}
+    \]
+  Por la condición de primer orden se tiene
+
+  \[
+  \dfrac{\partial }{\partial \hat{\beta}^{*}}\sum\limits_{i=1}^{n} e_{i}^{2} = 0 \leftrightarrow 2 \sum\limits_{i=1}^{n} \left(Y_{i}- \hat{\beta}^{*} \left(X_{1i}+X_{2i}\right)    \right)^{2}\left(-\left(X_{1i}+X_{2i}\right) \right) = 0 
+  \]
+  \[
+  \hat{\beta}^{*} = \dfrac{X_{11}Y_{1}+X_{12}Y_{2}+X_{21}Y_{1}+X_{22}Y_{2}}{\left(X_{11}+X_{21}\right)^{2} + \left(X_{12}+X_{22}\right)^{2}}\, \, \, \, \,\, \, \, \, \, \bigstar
+  \]
+  Del modelo 
+  \[
+  Y_{i} = \beta_{1}X_{1i}+\beta_{2}X_{2i}+\mu_{i}
+  \]
+  se tiene para $i = 1,2 $
+  \begin{align*}
+    Y_{1} &= \beta_{1}X_{11}+\beta_{2}X_{21}+\mu_{1}\\
+    Y_{2} &= \beta_{1}X_{12}+\beta_{2}X_{22}+\mu_{2}
+  \end{align*}
+  Por tanto, en forma matricial se tiene 
+
+  \[
+  \left(\begin{array}{cccc}
+      Y_{1}  \\
+      Y_{2} 
+  \end{array}\right) =\left(\begin{array}{cccc}
+      X_{11}  & X_{12} \\
+      X_{21}  & X_{22} 
+  \end{array}\right) \left(\begin{array}{cccc}
+      \beta_{1} \\
+      \beta_{2} 
+  \end{array}\right) +  \left(\begin{array}{cccc}
+      \mu_{1} \\
+      \mu_{2} 
+  \end{array}\right)
+  \]
+  Del cual 
+  \[
+  Y = \left( \begin{array}{cccc}
+        Y_{1} \\
+        Y_{2}
+  \end{array}  \right) \, \, \, \, ,  \, \, \, \, X = \left( \begin{array}{cccc}
+      X_{11}  & X_{12} \\
+      X_{21}  & X_{22} 
+  \end{array}\right) 
+  \]
+  Por consiguiente, haciendo algunos cálculos básicos se tiene 
+  \[
+  X^{'}X = \left( \begin{array}{cccc}
+        X_{11}^{2}+X_{12}^{2} & X_{11}X_{21}+X_{12}X_{22} \\
+        X_{21}X_{11}+X_{22}X_{12} & X_{21}^{2}+X_{22}^{2} 
+  \end{array}  \right)      \, \, \, \, , \, \, \, X^{'}Y = \left( \begin{array}{cccc}
+        X_{11}Y_{1} + X_{12}Y_{2} \\
+        X_{21}Y_{1} + X_{22}Y_{2}
+  \end{array}  \right) 
+  \]
+  Y dado que tenemos como dato
+  \[
+    X^{'}X = \left (\begin{array}{cccc}
+        10 & 0 \\
+        0  & 20
+    \end{array}\right) \, \, \textup{,} \, \, X^{'}Y = \left(\begin{array}{cccc}
+          3 \\
+          5 
+    \end{array} \right)
+    \]
+  se pueden igualar los valores de las matrices
+  \[
+  X_{11}^{2}+X_{12}^{2} = 10 \, \, , \, \, X_{21}^{2}+X_{22}^{2} = 20 \, \, , \, \,X_{11}X_{21}+X_{12}X_{22} = 0  \, \, , \, \, X_{21}X_{11}+X_{22}X_{12}  = 0 
+  \]
+  \[
+  X_{11}Y_{1} + X_{12}Y_{2}  = 3  \, \, , \, \,  X_{21}Y_{1} + X_{22}Y_{2} = 5
+  \]
+  de la igualdad de matrices, se tiene 
+  \[
+  X_{11}X_{21} = - X_{12}X_{22}
+  \]
+  Por lo tanto
+  \[
+  \hat{\beta}^{*} = \dfrac{X_{11}Y_{1}+X_{12}Y_{2}+X_{21}Y_{1}+X_{22}Y_{2}}{\left(X_{11}+X_{21}\right)^{2} + \left(X_{12}+X_{22}\right)^{2}} = \dfrac{3+5}{30} = \dfrac{4}{15} = 0.2666\dots \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \, \,    \blacksquare
+  \]
+
+\end{document}
+\pagecolor{pagecolor}

@@ -1,0 +1,129 @@
+% Preamble
+\documentclass[10pt,a4paper, openany ]{book}
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,amsthm} 
+\newtheorem{defi}{Definición}[section]
+\newtheorem{lema}{Lema}
+\newtheorem{coro}{Corolario}[section]
+\newtheorem{teo}{Teorema}[section]
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{setspace}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\usepackage{mathrsfs}
+%\usepackage{background}
+%\backgroundsetup{placement = center,
+% angle=0,scale=1.1,contents= {\includegraphics[scale =4]{oro.jpg}}, opacity }
+\definecolor{verdeclaro}{rgb}{0.0, 1.0, 0.5}
+\definecolor{rojo}{rgb}{0.89, 0.04, 0.36}
+\definecolor{violeta}{rgb}{0.89, 0.04, 0.36}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{lipsum}
+\usepackage{}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[top=1in,bottom=1in,left=3.2cm,right=2.6cm]{geometry}
+\usepackage{graphicx}\graphicspath{{graphics/}}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[square,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{makeidx}\makeindex
+\usepackage[nottoc]{tocbibind}
+\usepackage{emptypage}
+\usepackage[grey]{quotchap}
+\usepackage{hyperref}
+% \pagestyle{empty}
+\definecolor{letra}{RGB}{13,17,14}
+\definecolor{title}{rgb}{1.0,0.03,0.0}
+\definecolor{pagecolor}{RGB}{13,17,14}
+
+% Document
+\begin{document}
+  \pagecolor{pagecolor}
+  %%%%%%%%%%%%%%%%%%%%%%%% Proof 1 %%%%%%%%%%%%%%%%%%%%%
+  \color{verdeclaro}
+  \newpage
+  \Large
+  \begin{center}
+      \textbf{PROBLEMA 1}
+  \end{center}
+
+  \noindent  Dado el siguiente modelo
+  \vspace{0.5cm}
+  \begin{equation*}
+  Y_{i} = \beta_{1} + \beta_{2}X_{2i}+\beta_{3}X_{3i}+u_{i} 
+  \end{equation*}
+  \justifying
+  Asumiendo el método de minimos cuadrados ordinarios, ¿ Cómo podemos estar seguros que estamos minimizando la $\sum\limits_{i = 1}^{n}e^{2}_{i}$ ? \textbf{Demuetre}  su respuesta. \\
+  \begin{center}
+      \textbf{Solución} 
+  \end{center}
+  Rescordar : 
+  \begin{itemize}
+      \item     \textbf{FRP :}  $ E\left(Y_{i}\right)  =  \beta_{1} + \beta_{2}X_{2i}+\beta_{3}X_{3i} $ 
+      \item \textbf{FRM :}  $ \hat{Y}_{i}  =  \hat{\beta}_{1} + \hat{\beta}_{2}X_{2i}+\hat{\beta}_{3}X_{3i} $ \, \, \, \,  $ i =1,2,3,...,n $
+      \item $ \hat{u}_{i} = e_{i} = Y_{i}-\hat{Y}_{i}$
+  \end{itemize} 
+  Entonces, para demostrar el problema, partimos de la siguiente ecuación\\ 
+  \begin{align*}
+        e_{i} &= Y_{i} - \hat{Y}_{i}\\
+            e_{i} &= Y_{i} - \hat{\beta}_{1}-\hat{\beta}_{2}X_{2i}-\hat{\beta}_{3}X_{3i}\\
+              e^{2}_{i} &= ( Y_{i} - \hat{\beta}_{1}-\hat{\beta}_{2}X_{2i}-\hat{\beta}_{3}X_{3i} )^{2}\\
+              \sum\limits_{i=1}^{n}e^{2}_{i} &= \sum\limits_{i=1}^{n} ( Y_{i} - \hat{\beta}_{1}-\hat{\beta}_{2}X_{2i}-\hat{\beta}_{3}X_{3i} )^{2} 
+  \end{align*}
+  \justifying
+  Por consiguiente, para minimizar $ \sum\limits_{i=1}^{n}e^{2}_{i} $ empleamos el método de minimos cuadrados ordinarios (\textbf{MCO}). 
+  \begin{center}
+  \justifying
+  \textbf{Condición necesaría de primer orden :} Establece, que las primeras derivadas parciales con respecto a los estimadores ($\hat{\beta}_{1},\hat{\beta}_{2},\hat{\beta}_{3}$), tienen que igualarse a cero.    
+  \end{center}
+  \begin{equation*}
+      \dfrac{\partial}{\partial{\hat{\beta}_{1}}}\sum\limits_{i=1}^{n}e^{2}_{i} = 0 \, \,  ,  \,   \,   \,   \, \, \  \dfrac{\partial}{\partial{\hat{\beta}_{2}}}\sum\limits_{i=1}^{n}e^{2}_{i} = 0 \, \, ,  \,   \,   \,   \, \, \, \dfrac{\partial}{\partial{\hat{\beta}_{3}}}\sum\limits_{i=1}^{n}e^{2}_{i} = 0 
+  \end{equation*}
+  \\
+  \begin{center}
+  \justifying
+  \textbf{Condición suficiente de segundo orden  :}
+  Establece, que $\sum\limits_{i=1}^{n}e^{2}_{i} $ \,  será un mínimo, si los menores principales directores del determinante ( simétrico ) son de la siguiente manera ,  $ |H_{1}| >  0 ; \, \, |H_{2}|> 0 ;\, \, |H_{3}| >   0 $ . 
+  Donde  
+  \end{center}
+  \begin{equation*}
+      \left |
+          H_{1}
+  \right | = \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2} = 2n > 0 \, \, \, \,  ;\, \, \, \, \forall n \in \mathbb N - \{ 0 \}
+  \end{equation*}
+  \begin{equation*}
+  \left|H_{2} \right | =  \left |\begin{array}{cc}
+          \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2}     &  \dfrac{\partial^{2}}{\partial\hat{\beta}_{1}\partial\hat{\beta}_{2}}\sum\limits_{i = 1}^{n}e_{i}^{2}   \\
+            \dfrac{\partial^{2}}{\partial\hat{\beta}_{2}\partial\hat{\beta}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2}  & \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{2}}\sum\limits_{i = 1}^{n}e_{i}^{2}
+      \end{array}   \right | = \left  |\begin{array}{cc}
+          2n     &  2\sum\limits_{i=1}^{n}X_{2i}  \\
+            2\sum\limits_{i=1}^{n}X_{2i} & 2\sum\limits_{i=1}^{n}X^{2}_{2i}
+      \end{array}   \right |  > 0
+  \end{equation*}
+  \begin{equation*}
+      \left | H_{3} \right | =  \left |\begin{array}{ccc}
+          \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2}     &  \dfrac{\partial^{2}}{\partial\hat{\beta}_{1}\partial\hat{\beta}_{2}}\sum\limits_{i = 1}^{n}e_{i}^{2}  & \dfrac{\partial^{2}}{\partial\hat{\beta}_{1}\partial\hat{\beta}_{3}}\sum\limits_{i = 1}^{n}e_{i}^{2}  \\
+            \dfrac{\partial^{2}}{\partial\hat{\beta}_{2}\partial\hat{\beta}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2}  &  \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{2}}\sum\limits_{i = 1}^{n}e_{i}^{2} & \dfrac{\partial^{2}}{\partial\hat{\beta}_{2}\partial\hat{\beta}_{3}}\sum\limits_{i = 1}^{n}e_{i}^{2} \\ \dfrac{\partial^{2}}{\partial\hat{\beta}_{3}\partial\hat{\beta}_{1}}\sum\limits_{i = 1}^{n}e_{i}^{2} & \dfrac{\partial^{2}}{\partial\hat{\beta}_{3}\partial\hat{\beta}_{2}}\sum\limits_{i = 1}^{n}e_{i}^{2} & \dfrac{\partial^{2}}{\partial\hat{\beta}^{2}_{3}}\sum\limits_{i = 1}^{n}e_{i}^{2} 
+      \end{array}   \right |
+      \end{equation*}
+        \begin{equation*}
+        \left | H_{3} \right | =  \left |\begin{array}{ccc}
+          2n      &  2\sum\limits_{i=1}^{n}X_{2i}   & 2\sum\limits_{i=1}^{n}X_{3i}  \\
+            2\sum\limits_{i=1}^{n}X_{2i}   & 2\sum\limits_{i=1}^{n}X^{2}_{2i} & 2\sum\limits_{i=1}^{n}X_{2i}X_{3i}  \\ 2\sum\limits_{i=1}^{n}X_{3i} &  2\sum\limits_{i=1}^{n}X_{2i}X_{3i} & 2\sum\limits_{i=1}^{n}X^{2}_{3i}
+      \end{array}   \right |  > 0
+  \end{equation*}
+  \vspace{5mm} \\
+  Por lo tanto, gracias a la condición suficiente de segundo orden, podemos estar seguros que estamos minimizando $\sum\limits_{i = 1}^{n}e^{2}_{i}$.\, \, \, 
+
+\end{document}
+\pagecolor{pagecolor}
